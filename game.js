@@ -20,7 +20,7 @@ let game = {
 
     setCard: function (id) {
         let card = this.cards.filter(card => card.id === id)[0]
-        console.log(card)
+        // console.log(card)
 
         if (card.flipped || this.lockMode) {
             return false
@@ -71,7 +71,7 @@ let game = {
             this.cards.push(this.createPairFromTech(tech))
         })
         this.cards = this.cards.flatMap(pair => pair)
-        // this.shuffleCards()
+        this.shuffleCards()
         return this.cards
     },
 
@@ -96,6 +96,7 @@ let game = {
     shuffleCards: function (cards) {
         let currentIndex = this.cards.length
         let radomIndex = 0
+       
         while (currentIndex !== 0) {
             radomIndex = Math.floor(Math.random() * currentIndex)
             currentIndex--

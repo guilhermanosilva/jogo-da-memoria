@@ -26,13 +26,12 @@ body{
 }
 
 .card{
-    /* width: calc(23.4% - 10px); */
     width: 110px;
     height: 110px;
+    cursor: pointer;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.5s;
-    /* margin: 10px; */
 }
 
 .card img{
@@ -42,13 +41,16 @@ body{
 .card-front, .card-back{
     width: 100%;
     height: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    user-select: none;
     border-radius: 20px;
     box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.45);
     position: absolute;
-    backface-visibility: hidden; /*esconde todas as faces invertidas*/
+    backface-visibility: hidden;
 }
 
 .flip{
@@ -90,4 +92,46 @@ body{
     border: none;
     border-radius: 10px;
     margin-top: 30px;
+}
+
+@media only screen and (max-width: 320px){
+    #gameBoard{
+        width: 90%;
+        }   
+    .card{
+        width: 50px;
+        height: 50px;
+    }
+    .card-front, .card-back{
+        border-radius: 10px;
+        font-size: 1.2em;
+    }
+
+    #gameOver{
+        font-size: 1.6em;
+    }
+
+    #gameOver div{
+        margin-bottom: 20px;
+    }
+    #restart{
+        width: 90%;
+        font-weight: bold;
+        position: absolute;
+        bottom: 20px;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 500px){
+    .card{
+        width: 65px;
+        height: 65px;
+    }
+    .card-front, .card-back{
+        border-radius: 15px;
+        font-size: 1.6em;
+    }
+    #gameOver{
+        font-size: 1.8em;
+    }
 }

@@ -10,15 +10,11 @@ function startGame() {
 }
 
 function initializeCards(cards) {
-
     let gameBoard = document.getElementById('gameBoard')
-
     gameBoard.innerHTML = ''
 
     game.cards.forEach(card => {
-
         let cardElement = document.createElement('div')
-
         cardElement.id = card.id
         cardElement.classList.add(CARD)
         cardElement.dataset.icon = card.icon
@@ -37,14 +33,13 @@ function createCardContent(card, cardElement) {
 
 function createCardFace(face, card, element) {
     let cardElementFace = document.createElement('div')
-
     cardElementFace.classList.add(face)
 
     if (face === FRONT) {
         let iconElement = document.createElement('img')
-
         iconElement.classList.add(ICON)
         iconElement.src = "./img/" + card.icon + ".png"
+        
         cardElementFace.appendChild(iconElement)
     } else {
         cardElementFace.innerHTML = "&lt/&gt"
