@@ -1,4 +1,4 @@
-# jOGO DA MEMÓRIA
+# JOGO DA MEMÓRIA
 
 Jogo da memóra tendo como temática programação e algumas tecnologias utilizadas no desenvolviemento  web.
 
